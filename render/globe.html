@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>AMH email globe harness — real space-kit globe, round crop</title>
+<style>
+/* viewport = 240x240 (set by render.cjs) */
+html,body{margin:0;background:#02020a;overflow:hidden}
+#stage{position:relative;width:240px;height:240px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#0b1430 0%,#04071a 55%,#02020a 100%)}
+#stage>canvas[data-space-sky]{position:absolute;inset:0;width:100%;height:100%}
+.globe-wrap{position:absolute;inset:0}
+.globe-wrap canvas{opacity:1!important;transition:none!important}
+</style>
+<div id="stage">
+  <canvas data-space-sky data-accent="#3ef2a2" data-density="1800" data-every="1.4"></canvas>
+  <div class="globe-wrap" data-space-globe data-base="/poem/space/" data-accent="#3ef2a2" data-rocks="1" data-fill=".58" data-fill-phone=".58" data-rot="-1.4"></div>
+</div>
+<script type="module" src="/poem/space/space-kit.js"></script>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html data-hero="c">
+<meta charset="utf-8">
+<title>AMH email hero harness — real poem sun + real globe + space</title>
+<style>
+/* viewport = 720x360 (set by render.cjs; the sun module needs innerWidth >= 700 for its desktop layout, data-hero="c" puts the
+   whole disk on screen at x=12% / y=180 like amhagentbook.com/poem). The banner is the 680x360 #stage, screenshot-clipped. */
+html,body{margin:0;background:#02020a;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:680px;height:360px;overflow:hidden;background:radial-gradient(900px 500px at 70% 0%,#0d1636 0%,#050a1c 45%,#02020a 80%)}
+#stage>canvas[data-space-sky]{position:absolute;inset:0;width:100%;height:100%}
+/* sun-layer CSS = amhagentbook.com/poem/index.html .sun-layer rules; the host is the full viewport (sun.js sizes its canvas from
+   innerWidth/innerHeight), scaled about the sun centre (harness presentation only) */
+.sun-layer{position:absolute;left:0;top:0;width:720px;height:360px;pointer-events:none;overflow:visible;transform:scale(var(--sunScale,1.5));transform-origin:var(--sunX,86px) var(--sunY,180px)}
+.sun-layer .sun-dust{position:absolute;left:0;top:0;width:100%;height:100%}
+.sun-layer .sun-spill{position:absolute;inset:0;mix-blend-mode:screen;background:radial-gradient(circle 80vmax at var(--sunX,80%) var(--sunY,110px),rgba(255,176,96,.14) 0,rgba(255,140,60,.05) 35%,rgba(255,120,50,0) 70%);opacity:calc(.55 + var(--sunI,.1) * 2.2);transition:opacity .25s linear}
+/* globe box (space-kit centres the Earth in its box, data-fill = Earth share of the box) */
+.globe-wrap{position:absolute;right:-16px;top:-4px;width:var(--globeBox,368px);height:var(--globeBox,368px)}
+.globe-wrap canvas{opacity:1!important;transition:none!important}
+</style>
+<div id="stage">
+  <canvas data-space-sky data-accent="#3ef2a2" data-density="2400" data-every="1.1"></canvas>
+  <div class="sun-layer" aria-hidden="true"></div>
+  <div class="globe-wrap" data-space-globe data-base="/poem/space/" data-accent="#3ef2a2" data-rocks="1" data-fill=".46" data-fill-phone=".46" data-rot="-1.4"></div>
+</div>
+<script>/* harness knobs: ?scale=f (visual scale of the sun layer about the sun centre) &globe=px (globe box) &fill=f (Earth share) */
+(function(){const q=new URLSearchParams(location.search),r=document.documentElement.style;
+if(q.get('scale'))r.setProperty('--sunScale',q.get('scale'));
+if(q.get('globe'))r.setProperty('--globeBox',q.get('globe')+'px');if(q.get('fill'))document.querySelector('.globe-wrap').dataset.fill=document.querySelector('.globe-wrap').dataset.fillPhone=q.get('fill');})();
+</script>
+<script type="module" src="/poem/space/space-kit.js"></script>
+<script src="/poem/space/sun.js" defer></script>
+</html>

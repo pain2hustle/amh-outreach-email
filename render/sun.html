@@ -1,0 +1,17 @@
+<!doctype html>
+<html data-hero="c">
+<meta charset="utf-8">
+<title>AMH email sun harness — real poem sun (space/sun.js)</title>
+<style>
+/* viewport = 1600x300 (set by render.cjs): sun.js desktop layout with data-hero="c" puts the sun centre at x=12% (192px), y=180.
+   The 560x300 #stage at the left is the asset, screenshot-clipped; the sun layer is scaled about the sun centre. */
+html,body{margin:0;background:#02020a;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:560px;height:300px;overflow:hidden;background:#02020a}
+.sun-layer{position:absolute;left:0;top:0;width:1600px;height:300px;pointer-events:none;transform:scale(var(--sunScale,1.5));transform-origin:var(--sunX,192px) var(--sunY,180px)}
+.sun-layer .sun-dust{position:absolute;left:0;top:0;width:100%;height:100%}
+.sun-layer .sun-spill{position:absolute;inset:0;mix-blend-mode:screen;background:radial-gradient(circle 80vmax at var(--sunX,80%) var(--sunY,110px),rgba(255,176,96,.14) 0,rgba(255,140,60,.05) 35%,rgba(255,120,50,0) 70%);opacity:calc(.55 + var(--sunI,.1) * 2.2);transition:opacity .25s linear}
+</style>
+<div id="stage"><div class="sun-layer" aria-hidden="true"></div></div>
+<script>(function(){const q=new URLSearchParams(location.search);if(q.get('scale'))document.documentElement.style.setProperty('--sunScale',q.get('scale'));})();</script>
+<script src="/poem/space/sun.js" defer></script>
+</html>

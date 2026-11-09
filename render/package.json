@@ -1,0 +1,1 @@
+{ "name": "amh-outreach-email-render", "private": true, "version": "3.0.0", "description": "Render harness for the AMH outreach email visuals (real sun.js + space-kit.js in headless Chromium)", "dependencies": { "gifsicle": "^7.0.1" } }
