@@ -1,4 +1,5 @@
-// Builds ../template-v3.html (inline base64 data URIs, drop-in like v2) and ../template-v3-hosted.html (raw GitHub URLs)
+// Builds browser references: ../template-v3.html (data URIs) and ../template-v3-hosted.html (GitHub URLs).
+// For email MIME packaging use ../build_email.py; do not submit a data-URI preview as an email body.
 // from template-src.html + ../assets/. usage: node build-template.cjs
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, ".."), ASSETS = path.join(ROOT, "assets");

@@ -56,8 +56,9 @@ References: [Google sender guidelines](https://support.google.com/mail/answer/81
 
 ## Preserved v3 artwork and follow-up templates
 
-Austin's creator-outreach email (AMH Site Revival), v3: the same copy, links, Stripe buttons and
-chase-box styling as v2, with the visuals replaced by renders of the **real AMH site code**:
+Austin's creator-outreach email (AMH Site Revival), v3: the pricing, links, Stripe buttons and
+chase-box styling from v2, with accurate private-preview/search wording and a reply opt-out.
+The visuals use renders of the **real AMH site code**:
 
 - **Hero banner** `assets/space-globe.gif` (680x360, 24 frames @ 8 fps): the live `amhagentbook.com/poem`
   WebGL sun (`/poem/space/sun.js`, flare forced) composited in one page with the Site Revival space kit
