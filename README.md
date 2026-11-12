@@ -19,6 +19,20 @@ does not claim that private noindex previews are already indexed or promise rank
 400k daily views or a Google Knowledge Panel. A recipient can reply “no thanks”; check
 those replies and suppress further outreach to that address before any subsequent send.
 
+The current introduction starts “Hey, we saw you’ve got quite the online presence,
+so we made you a site.” Keep the recipient-specific preview URL, without a generic
+`Hi [name]` greeting. The name still identifies the subject and recipient record.
+
+### Outreach history
+
+Use the private **AMH Outreach — Contacts and Send History** spreadsheet in the AMH
+Google Drive `ChatGPT` folder. `Contacts` keeps one row per address, contact decisions,
+notes and an editable next-review date. `Send history` preserves each send as a separate
+row, including retries, exact Gmail/RFC message IDs, bounce evidence and template format.
+Check contact exclusions and replies before every send. A review date does not authorize
+an automatic send. Append a new history row for a retry instead of overwriting the earlier
+attempt. This is a maintained ledger; no background Gmail sync or scheduled sender is installed.
+
 `--mode links --to artificialmindhive@gmail.com` builds Austin's requested link-report
 email with the creator landing page and directory. Select Recent in the directory for
 the new pages. This mode is for Austin's report, not creator outreach.

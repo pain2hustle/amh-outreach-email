@@ -19,7 +19,7 @@ class EmailTests(unittest.TestCase):
         m,p,h,t=build('owner@example.com','A & B','https://example.com/preview/')
         self.assertEqual(len(re.findall('href=',h)),1);self.assertIn('private preview',t)
         self.assertNotIn('400k',t);self.assertNotIn('it\'s indexed',t);self.assertIn('no thanks',t)
-        self.assertIn('A &amp; B',h)
+        self.assertIn('Hey, we saw',h);self.assertNotIn('Hi A',h)
         with self.assertRaises(ValueError):build('owner@example.com\nBcc: other@example.com','Name','https://example.com')
     def test_late_bounce_overrides_sent_and_inbox(self):
         sent={'id':'s','label_ids':['SENT','INBOX'],'payload':{'headers':[{'name':'Message-ID','value':'<one@example.com>'}]}}
